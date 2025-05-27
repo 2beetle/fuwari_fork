@@ -3,7 +3,7 @@ title: 部署emby服
 published: 2024-10-23
 description: 家里云搭建emby服务
 image: ./cover.jpg
-tags: [emby]
+tags: [Emby,Self Host]
 category: Service
 draft: false
 ---

@@ -3,7 +3,7 @@ title: 新装windows系统后的配置
 published: 2025-01-02
 description: 新装windows系统后的配置
 image: ./cover.jpg
-tags: [windows]
+tags: [Windows]
 category: Record
 draft: false
 ---

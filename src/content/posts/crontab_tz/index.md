@@ -2,7 +2,7 @@
 title: ubuntu中crontab时区调整
 published: 2024-11-14
 description: crontab设置定时运行后因为时区问题导致运行时间与预想不一致
-tags: [crontab,timezone]
+tags: [Crontab,Timezone]
 category: Record
 image: ./images/crontab.png
 draft: false

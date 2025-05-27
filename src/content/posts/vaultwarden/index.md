@@ -2,7 +2,7 @@
 title: 家里云部署 vaultwarden
 published: 2024-11-02
 description: 通过 vps 中转访问家里云搭建的 vaultwarden
-tags: [vaultwarden]
+tags: [Vaultwarden,Self Host]
 category: Service
 image: ./images/vaultwarden.png
 draft: false

@@ -3,7 +3,7 @@ title: nginx缓存dns信息
 published: 2024-12-03
 description: 家里云使用ddns解析ipv6，在vps nginx上使用proxy_pass解析域名，ipv6发生改变后vps未能解析域名到正确ipv6
 image: ./cover.jpg
-tags: [nginx]
+tags: [Nginx]
 category: Record
 draft: false
 ---

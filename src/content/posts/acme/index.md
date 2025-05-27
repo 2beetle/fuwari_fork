@@ -3,7 +3,7 @@ title: acme使用并多节点同步证书
 published: 2024-12-10
 description: acme自动管理tls证书并多节点同步证书
 image: ./cover.jpg
-tags: [acme,ssl,rclone]
+tags: [acme,SSL,Rclone]
 category: Record
 draft: false
 ---

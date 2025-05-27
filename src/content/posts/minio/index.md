@@ -3,7 +3,7 @@ title: 部署minio
 published: 2024-10-23
 description: 在macmini中搭建minio服务
 image: ./cover.png
-tags: [minio]
+tags: [Minio,Self Host]
 category: Service
 draft: false
 ---

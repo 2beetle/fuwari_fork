@@ -3,7 +3,7 @@ title: 解决在 Mac 上 Tailscale 和 Shadowrocket 无法同时使用的问题
 published: 2025-05-27
 description: 让 mac 在同时打开 Shadowrocket 和 tailscale 时，能够正常科学以及连接 tailscale 节点
 image: ./cover.jpg
-tags: [tailscale, Shadowrocket, vpn]
+tags: [Tailscale, Shadowrocket, VPN]
 category: Record
 draft: false
 ---

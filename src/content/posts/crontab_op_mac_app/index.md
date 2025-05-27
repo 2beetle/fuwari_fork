@@ -2,7 +2,7 @@
 title: 在 mac 中计划定时开关 app
 published: 2024-11-09
 description: 利用快捷指令 + 休息日 app + 日历日程在 mac 中实现计划定时开关docker desktop
-tags: [mac,快捷指令]
+tags: [Mac,快捷指令]
 category: Record
 image: ./images/kjzl.png
 draft: false

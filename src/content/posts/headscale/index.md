@@ -3,7 +3,7 @@ title: Headscale + Tailscale + DERP
 published: 2025-05-24
 description: 自部署 Headscale DERP
 image: ./cover.jpg
-tags: [headscale, tailscale, derp, 内网穿透, selfhost]
+tags: [Headscale, Tailscale, DERP, 内网穿透, Self Host]
 category: Service
 draft: false
 ---

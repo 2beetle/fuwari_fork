@@ -3,7 +3,7 @@ title: 部署change-detection
 published: 2024-10-23
 description: 部署change-detection
 image: ./cover.jpg
-tags: [change-detection]
+tags: [Change-Detection,Self Host]
 category: Service
 draft: false
 ---

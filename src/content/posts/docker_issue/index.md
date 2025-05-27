@@ -2,7 +2,7 @@
 title: 解决docker inode、日志占用过大的问题
 published: 2024-11-01
 description: 解决docker overlay2占用过大的问题
-tags: [docker, inode, log]
+tags: [Docker, Inode, Log]
 category: Service
 image: ./images/docker.jpg
 draft: false
