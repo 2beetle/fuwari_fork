@@ -62,6 +62,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    syntaxHighlight: 'shiki',
     remarkPlugins: [
       remarkMath,
       remarkReadingTime,

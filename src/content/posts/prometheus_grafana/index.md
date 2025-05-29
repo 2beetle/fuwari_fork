@@ -421,6 +421,39 @@ sudo apt -y update && apt install -y ufw && sudo ufw allow from <面板IP> to an
 docker-compose up -d
 ```
 
+## 配置监控规则
+### 机器CPU占用异常
+```bash
+1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m]))
+```
+![cpu_rule.png](images/cpu_rule.png)
+
+
+### 机器掉线
+![online_rule.png](images/online_rule.png)
+
+
+### 下行速率监测
+```bash
+sum by (instance) (rate(node_network_receive_bytes_total[3m]) / 1024 / 1024 * 8)
+```
+![download_bandwidth_rule.png](images/download_bandwidth_rule.png)
+
+
+### 上行速率监测
+```bash
+sum by (instance) (rate(node_network_transmit_bytes_total[3m]) / 1024 / 1024 * 8)
+```
+![upload_bandwidth_rule.png](images/upload_bandwidth_rule.png)
+
+
+### 磁盘剩余空间
+```bash
+sum by (instance) (node_filesystem_avail_bytes{fstype!~"tmpfs|squashfs|devtmpfs"} / 1024 / 1024 / 1024)
+```
+![disk_rule.png](images/disk_rule.png)
+
+
 # 监控节点端
 
 ## 安装node_exporter
