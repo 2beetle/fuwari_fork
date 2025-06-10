@@ -9,9 +9,10 @@ draft: false
 ---
 
 # 面板端
-## 创建docker-compose.yml，启动prometheus和grafana
+## 创建docker-compose.yml
 
 ```yaml
+# <your project path>/docker-compose.yml
 version: "3"  
 services:  
   prometheus:  
@@ -47,6 +48,7 @@ services:
 
 ## 创建prometheus配置文件
 ```yaml
+# <your project path>/prometheus/prometheus.yml
 # Alertmanager configuration
 alerting:
   alertmanagers:
@@ -103,6 +105,7 @@ scrape_configs:
 
 ## 创建blackbox_exporter配置文件
 ```yaml
+# <your project path>/prometheus/blackbox/ISP.yml
  # 北京
     - targets:
         - bj-cm-v4.ip.zstaticcdn.com:80 # 或 IPv4 IP
@@ -267,6 +270,7 @@ scrape_configs:
     2. 允许未登录用户访问
 
 ```ini
+# <your project path>/grafana/conf/grafana.ini
 #################################### Anonymous Auth ######################
 [auth.anonymous]
 # enable anonymous access
@@ -283,8 +287,7 @@ org_role = Viewer
 
 # number of devices in total
 device_limit = 10
-```
-```ini
+
 #################################### Server ####################################
 [server]
 # Protocol (http, https, h2, socket)
@@ -309,7 +312,7 @@ domain = beocean.net
 # The full public facing url you use in browser, used for redirects and emails
 # If you use reverse proxy and sub path specify full url (with sub path)
 ;root_url = %(protocol)s://%(domain)s:%(http_port)s/
-root_url = https://server-status.beocean.net:3000
+root_url = https://<domain>:3000
 
 # Serve Grafana from subpath specified in `root_url` setting. By default it is set to `false` for compatibility reasons.
 ;serve_from_sub_path = false
@@ -379,7 +382,7 @@ server {
     ssl_ciphers "TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256:TLS13-AES-128-CCM-SHA256:EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5";
     ssl_session_cache builtin:1000 shared:SSL:10m;
 
-    server_name server-status.beocean.net;
+    server_name <domain>;
 
     location / {
         proxy_http_version 1.1;
@@ -420,6 +423,31 @@ sudo apt -y update && apt install -y ufw && sudo ufw allow from <面板IP> to an
 ```bash
 docker-compose up -d
 ```
+
+## 为Grafana添加prometheus数据源
+1. 浏览器访问监控服务器的 3000 端口。例如，输入 http://ip_addr:3000 ，将 ip_addr 替换为实际 IP 地址。
+2. Grafana 显示登录页面。使用用户名和默认密码 都是 admin 。当出现提示时，将密码更改为更安全的值。
+3. 成功更改密码后，Grafana 将显示 Grafana 仪表板。
+4. 要将 Prometheus 添加为数据源，请单击齿轮符号（代表配置），然后选择数据源。
+   ![add_datasource.png](images/add_datasource.png)
+5. 在下一个显示中，单击“添加数据源”按钮。
+6. 选择Prometheus作为数据源。
+7. 对于本地 Prometheus 源，将 URL 设置为`http://localhost:9090`。大多数其他设置可以保留默认值。
+8. 点击保存
+
+## Grafana设置面板模板
+### Node Information面板
+1. 选择菜单栏的`Dashboards`
+   ![dashboards.png](images/dashboards.png)
+2. 点击`Import`
+   ![dashboard_import.png](images/dashboard_import.png)
+3. 然后在 【Import via grafana.com】, 输入 ID `22403(英文) / 22869(中文)` 。然后选择【Load】。
+   ![dashboard_template.png](images/dashboard_template.png)
+4. 在下一个屏幕确认导入详细信息。选择 Prometheus 作为数据源，然后单击【Import】按钮。
+   ![prometheus_datasource.png](images/prometheus_datasource.png)
+
+### BBxPING Gen2 面板
+1. 流程同上，模板 ID 改为 `22500`
 
 ## 配置监控规则
 ### 机器CPU占用异常
