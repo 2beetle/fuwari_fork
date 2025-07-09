@@ -12,7 +12,7 @@ draft: false
 - [下载地址](https://emby.media/download.html)
 # 使用zerotier 节点将emby流量到家里云
 - 节点 nginx配置
-    ```shell
+    ```nginx
     user www-data;
     worker_processes auto;
     pid /run/nginx.pid;

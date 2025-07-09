@@ -72,7 +72,7 @@ draft: false
    
 ## 反向代理
 - nginx 配置
-   ```conf
+   ```nginx
    map $http_upgrade $connection_upgrade {
        default      upgrade;
        ''           close;

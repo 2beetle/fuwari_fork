@@ -366,7 +366,7 @@ cert_key = /etc/ssl/beocean.net/key.pem
 ```
 
 ## 配置nginx反向代理
-```
+```nginx
 upstream grafana {
   server localhost:3000;
 }

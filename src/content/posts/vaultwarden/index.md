@@ -37,7 +37,7 @@ $ docker-compose up -d
 ```
 
 # 配置 VPS nginx
-```shell
+```nginx
 server {
     listen <VPS监听 PORT> ssl;
     server_name <your vaultwarden domain>;

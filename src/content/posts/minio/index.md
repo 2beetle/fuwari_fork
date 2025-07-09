@@ -14,7 +14,7 @@ brew install minio/stable/minio
 ```
 
 # 配置nginx
-```
+```nginx
 # Upstream definitions
 upstream minio {
     server <minio ip>:<port>;
