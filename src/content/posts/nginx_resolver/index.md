@@ -93,7 +93,7 @@ draft: false
        ```bash
        vim /usr/lib/systemd/system/nginx.service
        ```
-       ```service
+       ```conf
        [Unit]
        Description=A high performance web server and a reverse proxy server
        Documentation=man:nginx(8)
