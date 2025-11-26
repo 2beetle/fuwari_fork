@@ -86,9 +86,7 @@ const formatDate = (date: Date) => {
   </div>
 )}
 
-<script>
-  // AI总结文本
-  const aiSummaryText = {finalSummary ? finalSummary : ''};
+<script define:vars={{ aiSummaryText }}>
 
   class TypeWriter {
     constructor(element, text, speed = 40) {
