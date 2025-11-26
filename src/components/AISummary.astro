@@ -41,43 +41,46 @@ const formatDate = (date: Date) => {
 {shouldShow && (
   <div class:list={["ai-summary-container card-base rounded-xl p-6 mb-6 transition-all duration-300 onload-animation", className]}>
     <!-- 标题栏 -->
-    <div class="flex items-center justify-between mb-4 cursor-pointer" id="ai-summary-header">
-      <div class="flex items-center gap-2">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
         <div class="ai-icon-container">
-          <Icon name="material-symbols:auto-awesome-rounded" class="text-[var(--primary)] text-xl"></Icon>
+          <Icon name="material-symbols:auto-awesome-rounded" class="text-white text-lg"></Icon>
         </div>
-        <h3 class="text-lg font-semibold text-[var(--title-color)]">
+        <h3 class="text-lg font-bold text-[var(--ai-summary-title)]">
           {i18n(I18nKey.aiSummary)}
         </h3>
       </div>
       <div class="flex items-center gap-3">
         {finalGeneratedDate && (
-          <span class="text-xs text-[var(--meta-color)] opacity-75 hidden sm:inline">
+          <span class="text-sm text-[var(--ai-summary-date)] bg-[var(--ai-summary-date-bg)] px-2 py-1 rounded-full">
             {formatDate(finalGeneratedDate)}
           </span>
         )}
-        <div id="ai-summary-toggle" class="transition-transform duration-300">
-          <Icon name="material-symbols:expand-more-rounded" class="text-[var(--meta-color)] text-xl"></Icon>
-        </div>
       </div>
     </div>
 
     <!-- 总结内容 -->
-    <div id="ai-summary-content" class="ai-summary-content">
-      <div class="text-[var(--text-color)] leading-relaxed prose prose-sm max-w-none">
-        <!-- 先直接显示内容，确保数据传递正常 -->
-        <p id="ai-summary-text-static" class="m-0">{finalSummary}</p>
-        <p id="ai-summary-text-dynamic" class="m-0" style="display: none;"></p>
+    <div class="ai-summary-content">
+      <div class="bg-[var(--ai-summary-content-bg)] rounded-lg p-4 border border-[var(--ai-summary-content-border)]">
+        <p class="m-0 text-[var(--ai-summary-text)] leading-relaxed">
+          {finalSummary}
+        </p>
       </div>
 
       {(finalModelName || finalGeneratedDate) && (
-        <div class="mt-3 pt-3 border-t border-[var(--line-divider)] border-dashed">
-          <div class="flex items-center justify-between text-xs text-[var(--meta-color)] opacity-60">
+        <div class="mt-4 pt-4 border-t border-[var(--ai-summary-meta-border)]">
+          <div class="flex items-center justify-between text-xs">
             {finalModelName && (
-              <span>{i18n(I18nKey.aiModel)}: {finalModelName}</span>
+              <span class="text-[var(--ai-summary-meta)] bg-[var(--ai-summary-meta-bg)] px-2 py-1 rounded">
+                <Icon name="material-symbols:psychology-alt" class="inline mr-1 text-xs"></Icon>
+                {i18n(I18nKey.aiModel)}: {finalModelName}
+              </span>
             )}
             {finalGeneratedDate && (
-              <span class="sm:hidden">{formatDate(finalGeneratedDate)}</span>
+              <span class="text-[var(--ai-summary-meta)] sm:hidden">
+                <Icon name="material-symbols:schedule" class="inline mr-1 text-xs"></Icon>
+                {formatDate(finalGeneratedDate)}
+              </span>
             )}
           </div>
         </div>
@@ -90,10 +93,11 @@ const formatDate = (date: Date) => {
 
 <style>
   .ai-summary-container {
-    border: 1px solid var(--line-divider);
-    background: var(--card-bg);
+    border: 1px solid var(--ai-summary-border);
+    background: var(--ai-summary-bg);
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
 
   .ai-summary-container::before {
@@ -102,20 +106,20 @@ const formatDate = (date: Date) => {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 0.8;
+    height: 4px;
+    background: linear-gradient(90deg, var(--ai-summary-gradient-start), var(--ai-summary-gradient-end));
+    opacity: 0.9;
   }
 
   .ai-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary));
-    opacity: 0.9;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, var(--ai-summary-icon-start), var(--ai-summary-icon-end));
+    box-shadow: 0 4px 12px rgba(var(--ai-summary-icon-shadow), 0.3);
   }
 
   .ai-summary-content {
@@ -123,40 +127,6 @@ const formatDate = (date: Date) => {
     opacity: 1;
     overflow: visible;
     transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
-  }
-
-  .ai-summary-container:hover {
-    border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.1);
-  }
-
-  .dark .ai-summary-container:hover {
-    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.2);
-  }
-
-  /* 标题栏hover效果 */
-  .ai-summary-container > div:first-child:hover {
-    background: rgba(var(--primary-rgb), 0.05);
-    margin: -1rem -1rem 1rem -1rem;
-    padding: 1rem;
-    border-radius: 0.75rem 0.75rem 0 0;
-  }
-
-  /* 打字机光标效果 */
-  #ai-summary-text {
-    display: inline;
-  }
-
-  #ai-summary-text::after {
-    content: '|';
-    animation: blink 1s infinite;
-    color: var(--primary);
-    font-weight: bold;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
   }
 
   /* 移动端优化 */
@@ -167,14 +137,9 @@ const formatDate = (date: Date) => {
       border-left: none;
       border-right: none;
     }
-
-    .ai-summary-container > div:first-child:hover {
-      margin: -1.5rem -1.5rem 1rem -1.5rem;
-      padding: 1.5rem;
-    }
   }
 
-  /* 确保CSS变量存在 */
+  /* AI总结专用CSS变量 */
   :root {
     --primary-rgb: 59, 130, 246;
     --primary-light: rgba(59, 130, 246, 0.1);
@@ -183,6 +148,24 @@ const formatDate = (date: Date) => {
     --meta-color: oklch(0.55 0.02 264.38);
     --line-divider: oklch(0.85 0.01 264.38);
     --accent: oklch(0.65 0.2 15);
+
+    /* AI总结主题变量 - 亮色主题 */
+    --ai-summary-bg: oklch(0.98 0.005 264.38);
+    --ai-summary-border: oklch(0.88 0.02 264.38);
+    --ai-summary-gradient-start: oklch(0.62 0.18 15);
+    --ai-summary-gradient-end: oklch(0.58 0.22 250);
+    --ai-summary-title: oklch(0.15 0.02 264.38);
+    --ai-summary-text: oklch(0.22 0.015 264.38);
+    --ai-summary-date: oklch(0.6 0.08 250);
+    --ai-summary-date-bg: oklch(0.94 0.03 250);
+    --ai-summary-content-bg: oklch(1 0.008 264.38);
+    --ai-summary-content-border: oklch(0.9 0.02 264.38);
+    --ai-summary-meta: oklch(0.45 0.02 264.38);
+    --ai-summary-meta-border: oklch(0.85 0.01 264.38);
+    --ai-summary-meta-bg: oklch(0.92 0.02 264.38);
+    --ai-summary-icon-start: oklch(0.58 0.18 15);
+    --ai-summary-icon-end: oklch(0.54 0.22 250);
+    --ai-summary-icon-shadow: 59, 130, 246;
   }
 
   .dark {
@@ -193,5 +176,23 @@ const formatDate = (date: Date) => {
     --meta-color: oklch(0.65 0.02 264.38);
     --line-divider: oklch(0.3 0.01 264.38);
     --accent: oklch(0.7 0.2 15);
+
+    /* AI总结主题变量 - 暗色主题 */
+    --ai-summary-bg: oklch(0.12 0.01 264.38);
+    --ai-summary-border: oklch(0.25 0.02 264.38);
+    --ai-summary-gradient-start: oklch(0.65 0.18 15);
+    --ai-summary-gradient-end: oklch(0.61 0.22 250);
+    --ai-summary-title: oklch(0.95 0.02 264.38);
+    --ai-summary-text: oklch(0.85 0.015 264.38);
+    --ai-summary-date: oklch(0.7 0.12 250);
+    --ai-summary-date-bg: oklch(0.15 0.04 250);
+    --ai-summary-content-bg: oklch(0.08 0.008 264.38);
+    --ai-summary-content-border: oklch(0.2 0.02 264.38);
+    --ai-summary-meta: oklch(0.6 0.02 264.38);
+    --ai-summary-meta-border: oklch(0.25 0.01 264.38);
+    --ai-summary-meta-bg: oklch(0.18 0.02 264.38);
+    --ai-summary-icon-start: oklch(0.61 0.18 15);
+    --ai-summary-icon-end: oklch(0.57 0.22 250);
+    --ai-summary-icon-shadow: 96, 165, 250;
   }
 </style>
