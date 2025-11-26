@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-11-26T13:16:30+08:00",
+  "projectName": "fuwari_fork",
+  "projectType": "astro-blog",
+  "language": "typescript",
+  "modules": [
+    {
+      "path": "/",
+      "name": "root",
+      "type": "astro-project",
+      "entry": "astro.config.mjs",
+      "description": "基于Astro的个人博客项目"
+    },
+    {
+      "path": "src",
+      "name": "source",
+      "type": "source-code",
+      "description": "源代码目录"
+    },
+    {
+      "path": "src/components",
+      "name": "components",
+      "type": "components",
+      "description": "Astro和Svelte组件"
+    },
+    {
+      "path": "src/pages",
+      "name": "pages",
+      "type": "pages",
+      "description": "Astro页面路由"
+    },
+    {
+      "path": "src/layouts",
+      "name": "layouts",
+      "type": "layouts",
+      "description": "页面布局模板"
+    },
+    {
+      "path": "src/content",
+      "name": "content",
+      "type": "content",
+      "description": "Markdown内容和博客文章"
+    },
+    {
+      "path": "src/utils",
+      "name": "utils",
+      "type": "utilities",
+      "description": "工具函数和辅助类"
+    },
+    {
+      "path": "src/plugins",
+      "name": "plugins",
+      "type": "plugins",
+      "description": "自定义Markdown和Rehype插件"
+    }
+  ],
+  "coverage": {
+    "totalFiles": 75,
+    "scannedFiles": 22,
+    "coveragePercentage": 29.3,
+    "ignoredFiles": 53,
+    "truncated": false
+  },
+  "ignoredPatterns": [
+    "dist/**",
+    "node_modules/**",
+    ".git/**",
+    ".astro/**",
+    "*.png",
+    "*.jpg",
+    "*.jpeg",
+    "*.gif",
+    "*.svg"
+  ],
+  "gaps": [
+    "src/i18n/* 国际化配置",
+    "src/styles/* 样式文件",
+    "src/assets/* 静态资源",
+    "public/* 公共资源",
+    "部分组件实现细节"
+  ],
+  "nextSteps": [
+    "深入扫描i18n国际化配置",
+    "检查TailwindCSS配置",
+    "分析更多组件实现",
+    "查看测试配置（如果存在）"
+  ]
+}
