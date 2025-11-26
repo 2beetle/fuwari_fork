@@ -133,11 +133,14 @@ const formatDate = (date: Date) => {
     }
   }
 
-  // 页面加载完成后开始打字效果
-  document.addEventListener('DOMContentLoaded', () => {
+  // 启动打字效果的函数
+  function startTypeWriter() {
     const textElement = document.getElementById('ai-summary-text');
 
-    if (textElement) {
+    if (textElement && !textElement.dataset.typewriterStarted) {
+      // 标记已启动，避免重复执行
+      textElement.dataset.typewriterStarted = 'true';
+
       // 从data属性获取文本
       const aiSummaryText = textElement.getAttribute('data-summary');
 
@@ -149,7 +152,13 @@ const formatDate = (date: Date) => {
         }, 500);
       }
     }
-  });
+  }
+
+  // 页面加载完成后开始打字效果
+  document.addEventListener('DOMContentLoaded', startTypeWriter);
+
+  // 监听 Swup 页面过渡事件
+  document.addEventListener('swup:page:view', startTypeWriter);
 </script>
 
 <style>
