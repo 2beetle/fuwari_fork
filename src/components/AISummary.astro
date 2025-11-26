@@ -41,7 +41,7 @@ const formatDate = (date: Date) => {
 {shouldShow && (
   <div class:list={["ai-summary-container card-base rounded-xl p-6 mb-6 transition-all duration-300 onload-animation", className]}>
     <!-- 标题栏 -->
-    <div class="flex items-center justify-between mb-4 cursor-pointer" onclick="toggleAISummary()">
+    <div class="flex items-center justify-between mb-4 cursor-pointer">
       <div class="flex items-center gap-2">
         <div class="ai-icon-container">
           <Icon name="material-symbols:auto-awesome-rounded" class="text-[var(--primary)] text-xl"></Icon>
@@ -85,33 +85,34 @@ const formatDate = (date: Date) => {
 )}
 
 <script>
-  function toggleAISummary() {
-    const content = document.getElementById('ai-summary-content');
-    const toggle = document.getElementById('ai-summary-toggle');
-
-    if (content && toggle) {
-      const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
-
-      if (isExpanded) {
-        // 收起
-        content.style.maxHeight = '0px';
-        content.style.opacity = '0';
-        toggle.style.transform = 'rotate(0deg)';
-      } else {
-        // 展开
-        content.style.maxHeight = content.scrollHeight + 'px';
-        content.style.opacity = '1';
-        toggle.style.transform = 'rotate(180deg)';
-      }
-    }
-  }
-
   // 初始化状态 - 默认展开
   document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('ai-summary-content');
     if (content) {
       content.style.maxHeight = content.scrollHeight + 'px';
       content.style.opacity = '1';
+    }
+
+    // 添加点击事件监听器
+    const toggleContainer = document.querySelector('.ai-summary-container > div:first-child');
+    const toggle = document.getElementById('ai-summary-toggle');
+
+    if (toggleContainer && content && toggle) {
+      toggleContainer.addEventListener('click', () => {
+        const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+        if (isExpanded) {
+          // 收起
+          content.style.maxHeight = '0px';
+          content.style.opacity = '0';
+          toggle.style.transform = 'rotate(0deg)';
+        } else {
+          // 展开
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          toggle.style.transform = 'rotate(180deg)';
+        }
+      });
     }
   });
 </script>
