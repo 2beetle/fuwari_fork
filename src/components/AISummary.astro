@@ -86,39 +86,7 @@ const formatDate = (date: Date) => {
   </div>
 )}
 
-<script>
-  // 初始化状态 - 默认展开
-  document.addEventListener('DOMContentLoaded', () => {
-    const content = document.getElementById('ai-summary-content');
-    const header = document.getElementById('ai-summary-header');
-    const toggle = document.getElementById('ai-summary-toggle');
-
-    // 设置初始状态为展开
-    if (content) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.style.opacity = '1';
-    }
-
-    // 添加点击事件监听器
-    if (header && content && toggle) {
-      header.addEventListener('click', () => {
-        const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
-
-        if (isExpanded) {
-          // 收起
-          content.style.maxHeight = '0px';
-          content.style.opacity = '0';
-          toggle.style.transform = 'rotate(0deg)';
-        } else {
-          // 展开
-          content.style.maxHeight = content.scrollHeight + 'px';
-          content.style.opacity = '1';
-          toggle.style.transform = 'rotate(180deg)';
-        }
-      });
-    }
-  });
-</script>
+<!-- 暂时移除JavaScript，确保内容正确显示 -->
 
 <style>
   .ai-summary-container {
@@ -151,9 +119,9 @@ const formatDate = (date: Date) => {
   }
 
   .ai-summary-content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
     transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
   }
 
