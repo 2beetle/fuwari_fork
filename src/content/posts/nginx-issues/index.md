@@ -8,7 +8,7 @@ category: Record
 draft: false
 aiSummary: "本文详细记录了一次 Nginx 配置 Django 项目时遇到的无限重定向问题。问题出现在 Django 的 SSL 重定向配置与 Nginx 代理配置不匹配：Django 设置了 SECURE_SSL_REDIRECT=True 强制 HTTPS，但 Nginx 缺少 proxy_set_header X-Forwarded-Proto $scheme 配置，导致 Django 无法识别真实请求协议。解决方案是在 Nginx 配置中添加该关键配置，让后端能够正确识别客户端的访问协议。"
 aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "Claude Sonnet"
+aiSummaryModel: "GLM-4.6"
 ---
 
 # Nginx无限重定向

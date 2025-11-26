@@ -6,6 +6,9 @@ tags: [Mac,快捷指令]
 category: Record
 image: ./images/kjzl.png
 draft: false
+aiSummary: "本文详细介绍了在 macOS 中实现应用程序定时开关的多种解决方案。核心方案是结合快捷指令、休息日 App 和系统日历，实现 Docker Desktop 的智能化定时管理。文章提供了三种定时执行方法：付费的 Shortery 工具、免费的系统日历提醒机制、以及 crontab 命令行方案。通过工作日判断逻辑和灵活的触发方式，实现了适合个人工作环境的应用自动化管理。"
+aiSummaryGenerated: 2025-11-26
+aiSummaryModel: "GLM-4.6"
 ---
 > 因为某种原因，需要实现每天晚上定时关闭 mac 的 docker 以及在工作日早上定时开启 docker，因此有了这个记录
 # 下载休息日 app
@@ -31,6 +34,10 @@ draft: false
 ![](images/Xnip2024-11-09_11-46-35.jpg)
 3. 打开软件选项中选择快捷指令
 ![](images/Xnip2024-11-09_11-49-20.jpg)
+## 使用`crontab`
+```bash
+0 */4 * * * /usr/bin/shortcuts run "<你的快捷指令名称>"
+```
 
 # 参考文章
 1. [App+1 | Shortery，为 macOS 捷径增加自动化运行的新方式](https://sspai.com/post/72692)

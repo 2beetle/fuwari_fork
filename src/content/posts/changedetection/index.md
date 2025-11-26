@@ -6,6 +6,9 @@ image: ./cover.jpg
 tags: [Change-Detection,Self Host]
 category: Service
 draft: false
+aiSummary: "本文介绍了使用 Docker Compose 部署 changedetection.io 网页变更监控服务的完整流程。该服务通过集成 Playwright 和 Chrome 浏览器，能够监控包含 JavaScript 动态内容的网页变化。配置文件详细展示了各种环境参数设置，包括代理配置、日志级别、并发抓取数量等，并提供了完整的依赖服务配置，确保服务能够稳定运行并准确检测网页内容的变化。"
+aiSummaryGenerated: 2025-11-26
+aiSummaryModel: "GLM-4.6"
 ---
 
 # 下载项目

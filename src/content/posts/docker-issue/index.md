@@ -6,6 +6,9 @@ tags: [Docker, Inode, Log]
 category: Service
 image: ./images/docker.jpg
 draft: false
+aiSummary: "本文全面解决了 Docker 环境中 inode 资源和日志文件占用磁盘空间过大的问题。详细解释了 inode 的概念和作用，提供了查看 inode 占用、定位大文件目录的具体命令。针对 Docker 容器日志，提供了多种清理方案和预防措施，包括日志大小限制配置，帮助用户有效管理 Docker 环境的磁盘使用，确保服务器稳定运行。"
+aiSummaryGenerated: 2025-11-26
+aiSummaryModel: "GLM-4.6"
 ---
 
 # inode

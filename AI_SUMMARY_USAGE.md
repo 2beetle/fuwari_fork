@@ -27,7 +27,7 @@ published: 2025-01-01
 # AI Summary
 aiSummary: "这里填写AI生成的总结内容"
 aiSummaryGenerated: 2025-11-26  # 生成日期
-aiSummaryModel: "Claude Sonnet"  # 使用的AI模型
+aiSummaryModel: "GLM-4.6"  # 使用的AI模型
 ---
 ```
 
