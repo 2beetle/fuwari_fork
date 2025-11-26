@@ -35,4 +35,10 @@ export const es: Translation = {
 	[Key.author]: "Autor",
 	[Key.publishedAt]: "Publicado el",
 	[Key.license]: "Licencia",
+
+	// AI Summary
+	[Key.aiSummary]: "Resumen IA",
+	[Key.aiModel]: "Modelo IA",
+	[Key.aiSummaryLoading]: "Generando resumen IA...",
+	[Key.aiSummaryError]: "Error al generar resumen IA",
 };

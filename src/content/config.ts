@@ -17,6 +17,11 @@ const postsCollection = defineCollection({
 		prevSlug: z.string().default(""),
 		nextTitle: z.string().default(""),
 		nextSlug: z.string().default(""),
+
+		/* AI Summary */
+		aiSummary: z.string().optional(),
+		aiSummaryGenerated: z.date().optional(),
+		aiSummaryModel: z.string().optional(),
 	}),
 });
 export const collections = {

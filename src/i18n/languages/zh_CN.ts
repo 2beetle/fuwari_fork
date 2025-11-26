@@ -35,4 +35,10 @@ export const zh_CN: Translation = {
 	[Key.author]: "作者",
 	[Key.publishedAt]: "发布于",
 	[Key.license]: "许可协议",
+
+	// AI Summary
+	[Key.aiSummary]: "AI 总结",
+	[Key.aiModel]: "AI 模型",
+	[Key.aiSummaryLoading]: "正在生成 AI 总结...",
+	[Key.aiSummaryError]: "AI 总结生成失败",
 };

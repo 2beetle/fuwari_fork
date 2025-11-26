@@ -35,4 +35,10 @@ export const ja: Translation = {
 	[Key.author]: "作者",
 	[Key.publishedAt]: "公開日",
 	[Key.license]: "ライセンス",
+
+	// AI Summary
+	[Key.aiSummary]: "AI まとめ",
+	[Key.aiModel]: "AI モデル",
+	[Key.aiSummaryLoading]: "AI まとめを生成中...",
+	[Key.aiSummaryError]: "AI まとめの生成に失敗しました",
 };
