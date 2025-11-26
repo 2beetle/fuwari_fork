@@ -41,7 +41,7 @@ const formatDate = (date: Date) => {
 {shouldShow && (
   <div class:list={["ai-summary-container card-base rounded-xl p-6 mb-6 transition-all duration-300 onload-animation", className]}>
     <!-- 标题栏 -->
-    <div class="flex items-center justify-between mb-4 cursor-pointer">
+    <div class="flex items-center justify-between mb-4 cursor-pointer" id="ai-summary-header">
       <div class="flex items-center gap-2">
         <div class="ai-icon-container">
           <Icon name="material-symbols:auto-awesome-rounded" class="text-[var(--primary)] text-xl"></Icon>
@@ -65,7 +65,9 @@ const formatDate = (date: Date) => {
     <!-- 总结内容 -->
     <div id="ai-summary-content" class="ai-summary-content">
       <div class="text-[var(--text-color)] leading-relaxed prose prose-sm max-w-none">
-        <p class="m-0">{finalSummary}</p>
+        <!-- 先直接显示内容，确保数据传递正常 -->
+        <p id="ai-summary-text-static" class="m-0">{finalSummary}</p>
+        <p id="ai-summary-text-dynamic" class="m-0" style="display: none;"></p>
       </div>
 
       {(finalModelName || finalGeneratedDate) && (
@@ -88,17 +90,18 @@ const formatDate = (date: Date) => {
   // 初始化状态 - 默认展开
   document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('ai-summary-content');
+    const header = document.getElementById('ai-summary-header');
+    const toggle = document.getElementById('ai-summary-toggle');
+
+    // 设置初始状态为展开
     if (content) {
       content.style.maxHeight = content.scrollHeight + 'px';
       content.style.opacity = '1';
     }
 
     // 添加点击事件监听器
-    const toggleContainer = document.querySelector('.ai-summary-container > div:first-child');
-    const toggle = document.getElementById('ai-summary-toggle');
-
-    if (toggleContainer && content && toggle) {
-      toggleContainer.addEventListener('click', () => {
+    if (header && content && toggle) {
+      header.addEventListener('click', () => {
         const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
 
         if (isExpanded) {
@@ -151,7 +154,7 @@ const formatDate = (date: Date) => {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
   }
 
   .ai-summary-container:hover {
@@ -169,6 +172,23 @@ const formatDate = (date: Date) => {
     margin: -1rem -1rem 1rem -1rem;
     padding: 1rem;
     border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  /* 打字机光标效果 */
+  #ai-summary-text {
+    display: inline;
+  }
+
+  #ai-summary-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
   /* 移动端优化 */
