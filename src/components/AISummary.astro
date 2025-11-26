@@ -86,7 +86,9 @@ const formatDate = (date: Date) => {
   </div>
 )}
 
-<script define:vars={{ aiSummaryText }}>
+<script>
+  // AI总结文本数据
+  const aiSummaryData = {finalSummary ? JSON.stringify(finalSummary) : '""'};
 
   class TypeWriter {
     constructor(element, text, speed = 40) {
@@ -120,12 +122,16 @@ const formatDate = (date: Date) => {
   document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.getElementById('ai-summary-text');
 
-    if (textElement && aiSummaryText) {
-      // 延迟500ms开始打字效果
-      setTimeout(() => {
-        const typewriter = new TypeWriter(textElement, aiSummaryText, 30);
-        typewriter.start();
-      }, 500);
+    if (textElement && aiSummaryData) {
+      const aiSummaryText = JSON.parse(aiSummaryData);
+
+      if (aiSummaryText && aiSummaryText.trim()) {
+        // 延迟500ms开始打字效果
+        setTimeout(() => {
+          const typewriter = new TypeWriter(textElement, aiSummaryText, 30);
+          typewriter.start();
+        }, 500);
+      }
     }
   });
 </script>
