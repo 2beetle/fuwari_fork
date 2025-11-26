@@ -55,8 +55,8 @@ const formatDate = (date: Date) => {
 
       <!-- 总结内容 -->
       <div class="ai-content">
-        <p class="ai-text" id="ai-summary-text">
-          {finalSummary}
+        <p class="ai-text" id="ai-summary-text" data-summary={finalSummary}>
+          {/* 文字将通过JavaScript动态添加 */}
         </p>
       </div>
 
@@ -138,10 +138,10 @@ const formatDate = (date: Date) => {
     const textElement = document.getElementById('ai-summary-text');
 
     if (textElement) {
-      // 获取当前显示的文本
-      const aiSummaryText = textElement.textContent?.trim();
+      // 从data属性获取文本
+      const aiSummaryText = textElement.getAttribute('data-summary');
 
-      if (aiSummaryText && aiSummaryText.length > 0) {
+      if (aiSummaryText && aiSummaryText.trim()) {
         // 延迟500ms开始打字效果
         setTimeout(() => {
           const typewriter = new TypeWriter(textElement, aiSummaryText, 30);
