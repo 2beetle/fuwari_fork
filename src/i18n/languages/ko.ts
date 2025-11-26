@@ -35,4 +35,10 @@ export const ko: Translation = {
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",
+
+	// AI Summary
+	[Key.aiSummary]: "AI 요약",
+	[Key.aiModel]: "AI 모델",
+	[Key.aiSummaryLoading]: "AI 요약 생성 중...",
+	[Key.aiSummaryError]: "AI 요약 생성 실패",
 };
