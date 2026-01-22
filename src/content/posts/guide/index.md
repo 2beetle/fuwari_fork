@@ -6,9 +6,6 @@ image: "./cover.jpeg"
 tags: ["Fuwari", "Blogging", "Customization"]
 category: Guides
 draft: true
-aiSummary: "本文介绍了基于 Astro 构建的 Fuwari 博客模板的使用方法。详细说明了文章 FrontMatter 的各个属性（标题、发布日期、描述、封面图片、标签、分类、草稿状态）及其用途，并提供了文章文件的组织结构建议。该模板支持灵活的图片路径配置和目录结构，帮助用户快速搭建和管理个人博客。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 > Cover image source: [Source](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/208fc754-890d-4adb-9753-2c963332675d/width=2048/01651-1456859105-(colour_1.5),girl,_Blue,yellow,green,cyan,purple,red,pink,_best,8k,UHD,masterpiece,male%20focus,%201boy,gloves,%20ponytail,%20long%20hair,.jpeg)

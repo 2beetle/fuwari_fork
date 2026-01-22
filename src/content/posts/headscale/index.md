@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [Headscale, Tailscale, DERP, 内网穿透, Self Host]
 category: Service
 draft: false
-aiSummary: "本文详细介绍了自建 Headscale 控制服务器和 DERP 中继服务器的完整方案。通过 Docker 部署 Headscale 作为 Tailscale 的私有控制平面，实现去中心化的虚拟组网。重点讲解了 DERP 服务器的部署配置，包括证书管理、安全验证和故障恢复策略。这套方案解决了 Tailscale 官方服务的限制，为用户提供了完全自主控制的内网穿透和组网解决方案。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 # 部署 Headscale
 

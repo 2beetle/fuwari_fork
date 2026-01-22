@@ -6,9 +6,6 @@ image: ./cover.png
 tags: [Minio,Self Host]
 category: Service
 draft: false
-aiSummary: "本文介绍了在 Mac mini 上部署 MinIO 对象存储服务的完整方案。通过 Homebrew 安装 MinIO，配置了完整的 Nginx 反向代理，分别处理 API 请求和管理控制台访问，支持 SSL 加密和 WebSocket 连接。文章详细说明了环境变量配置、服务启动方法，并提供了 Python SDK 使用参考，为自建对象存储服务提供了专业的部署指南。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 # 下载minio

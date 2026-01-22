@@ -6,9 +6,6 @@ tags: [Vaultwarden,Self Host]
 category: Service
 image: ./images/vaultwarden.png
 draft: false
-aiSummary: "本文介绍了通过 VPS 中转访问家庭云服务器部署的 Vaultwarden 密码管理服务的完整方案。使用 Docker Compose 部署 Vaultwarden 容器，配置 SSL 证书和安全域名，然后在 VPS 上配置 Nginx 反向代理，实现 HTTPS 安全访问。这种架构既利用了家庭服务器的存储优势，又通过 VPS 提供了稳定的公网访问入口，为自建密码管理器提供了安全可靠的部署方案。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 # 进入你的项目目录

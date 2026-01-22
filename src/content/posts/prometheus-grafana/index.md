@@ -6,9 +6,6 @@ tags: [Prometheus,Grafana,Node Exporter,Blackbox Exporter]
 category: Service
 image: ./cover.jpg
 draft: false
-aiSummary: "本文详细介绍了使用 Prometheus、Grafana、Node Exporter 和 Blackbox Exporter 四个组件搭建完整监控系统的方案。包含面板端和监控节点端的完整部署配置，通过 Docker Compose 统一管理服务，配置了 SSL 加密访问、反向代理、防火墙规则等安全措施。提供了专业的监控面板模板和告警规则配置，实现了系统性能监控和网络连通性检测的企业级监控解决方案。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 # 面板端

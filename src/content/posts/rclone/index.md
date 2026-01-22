@@ -6,9 +6,6 @@ tags: [Rclone, OSS]
 category: Record
 image: ./cover.jpg
 draft: false
-aiSummary: "本文详细介绍了使用 Rclone 工具将多个服务器数据备份到阿里云 OSS 的完整方案。从创建 RAM 权限策略和用户开始，逐步配置 Rclone 连接 OSS 存储，提供了完整的交互式配置流程。核心部分是一个功能完善的备份脚本，包含传参校验、错误检查、日志记录和文件排除规则，支持通过定时任务实现自动化备份，为多服务器环境提供了可靠的数据保护解决方案。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 # 配置阿里云
 ## 新增 RAM 权限策略

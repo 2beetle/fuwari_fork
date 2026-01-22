@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [Nginx]
 category: Record
 draft: false
-aiSummary: "本文解决了 Nginx 缓存 DNS 解析导致的动态 IPv6 地址更新问题。当家庭云使用 DDNS 解析 IPv6 地址时，VPS 上的 Nginx 会缓存域名解析结果，导致 IPv6 地址变更后无法正确连接。提供了两种解决方案：简单的重启服务方法，以及更彻底的编译安装 nginx-upstream-dynamic-servers 模块实现动态域名解析。详细记录了从源码编译安装 Nginx 的完整流程和配置方法。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 # 查看nginx错误日志

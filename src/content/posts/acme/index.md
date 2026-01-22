@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [acme,SSL,Rclone]
 category: Record
 draft: false
-aiSummary: "本文详细介绍了使用 acme.sh 自动管理 SSL/TLS 证书的完整流程，包括通过 CloudFlare DNS API 验证方式生成通配符证书的步骤。重点解决了多节点环境下证书同步的问题，通过结合 Rclone 工具和定时任务，实现了证书在主节点的自动上传和其他节点的自动下载同步，确保了多服务器架构下 TLS 证书的一致性和自动化管理。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 # 安装acme
 ```bash

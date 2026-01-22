@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [Windows]
 category: Record
 draft: false
-aiSummary: "本文提供了新安装 Windows 系统后的完整配置指南，涵盖了开发环境搭建和系统优化的重要步骤。包括安装 Git 工具、配置 GitHub SSH 密钥的详细流程，使用开源工具激活系统，以及通过修改注册表彻底禁止自动更新的方法。这些配置能够帮助用户快速搭建一个适合开发和日常使用的 Windows 工作环境。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 # 安装Git

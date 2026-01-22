@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [Logrotate, Journald]
 category: Record
 draft: false
-aiSummary: "本文全面介绍了在 Debian 系统中管理日志文件大小的两种主要方法：使用 logrotate 管理传统日志文件和配置 journald 管理系统日志。通过实际案例展示了如何将 daemon.log 从 1.2GB 减少到合理大小，以及如何将 journald 日志从 3.9GB 清理到 200MB。文章详细说明了各种配置参数的作用，并解答了常见的日志清理问题，为系统管理员提供了实用的磁盘空间管理方案。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 # 安装依赖
 1. 安装`logrotate`

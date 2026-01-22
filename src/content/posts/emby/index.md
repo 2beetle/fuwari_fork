@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [Emby,Self Host]
 category: Service
 draft: false
-aiSummary: "本文详细介绍了在家庭云服务器上部署 Emby 媒体服务器的完整方案。通过 ZeroTier 节点将流量路由到家庭服务器，并提供了专业级的 Nginx 反向代理配置，包括 SSL 证书配置、视频缓存优化、WebSocket 连接和切片代理等功能。该方案既利用了家庭服务器的存储优势，又通过反向代理提供了稳定的公网访问，为自建媒体服务器提供了完整的部署指南。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 
 # 在家里云中下载emby 

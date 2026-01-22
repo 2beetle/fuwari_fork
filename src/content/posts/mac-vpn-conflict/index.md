@@ -6,9 +6,6 @@ image: ./cover.jpg
 tags: [Tailscale, Shadowrocket, VPN]
 category: Record
 draft: false
-aiSummary: "本文解决了 Mac 系统中 Tailscale 和 Shadowrocket 同时使用时出现的网络路由冲突问题。问题的核心是 Shadowrocket 的 TUN 旁路路由包含了 Tailscale 的网段（如 100.64.0.0/10），导致流量无法正确路由。解决方案是通过修改 Shadowrocket 配置，从 TUN 旁路路由中删除 Tailscale 网段，并添加 IP-CIDR 规则实现直连，最终实现两个工具的和谐共存。"
-aiSummaryGenerated: 2025-11-26
-aiSummaryModel: "GLM-4.6"
 ---
 # 背景
 > 刚部署完 headscale 后当我的 mac 同时打开 Shadowrocket 和 tailscale 时，发现只能正常科学，但是无法连接到其他 tailscale 的节点
